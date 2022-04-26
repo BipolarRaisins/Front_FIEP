@@ -12,8 +12,13 @@ const mix = require('laravel-mix');
  */
 
 mix
-    .js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ])
-    .styles('resources/css/app.css', 'public/css/main.css');
+    .js('resources/scripts/main.js', 'public/build/bundle.js')
+    .sass('resources/styles/main.scss', 'public/build/bundle.css')
+    .browserSync({
+        proxy: 'localhost',
+        files: [
+            'public/**/*',
+            'resources/**/*.twig',
+            'resources/**/*.php',
+        ],
+    });
