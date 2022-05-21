@@ -1,2 +1,2 @@
-require('./bootstrap');
-console.log("Hello there!");
+import './uikit';
+import './swiper';
